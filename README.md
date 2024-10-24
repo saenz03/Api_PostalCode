@@ -1,4 +1,5 @@
 Microservicios para la integración con códigos postales del Reino Unido
+
 Este proyecto consiste en dos microservicios escritos en Python que integran la API pública de postcodes.io para obtener información de códigos postales del Reino Unido a partir de coordenadas geográficas contenidas en un archivo CSV. El entorno del proyecto está Dockerizado, y se utiliza PostgreSQL como base de datos. Los microservicios están diseñados con un enfoque en escalabilidad, separación de responsabilidades y facilidad de despliegue.
 
 Tabla de contenidos
