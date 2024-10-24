@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postcodes_db
+    ports:
+      - "5432:5432"
+    networks:
+      - mynetwork
+
+  microservice_1:
+    build: ./MicroService_1
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    networks:
+      - mynetwork
+
+  microservice_2:
+    build: ./MicroService_2
+    depends_on:
+      - db
+      - microservice_1
+    ports:
+      - "5001:5001"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
